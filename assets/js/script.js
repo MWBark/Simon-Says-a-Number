@@ -1,12 +1,17 @@
 let numberElement = document.getElementById("random-nums")
 let displayBtn = document.getElementById("display-nums")
+let submitAnswer = document.getElementById("submit")
+let userAnswer = document.getElementById("user-answer").value
+let userLvl = document.getElementById("user-level")
 
 displayBtn.addEventListener('click', () => displayNums())
+submitAnswer.addEventListener('click', () => checkAnswer())
 
 let numHolder = ''
 let answer = ''
 
 let level = 1
+displayLvl()
 
 function displayNums() {
 
@@ -28,8 +33,15 @@ function displayNums() {
 function checkAnswer() {
 
     if (userAnswer === answer) {
-        level++
+        level++;
+        displayLvl();
     } else {
-        level = 1
+        level = 1;
+        displayLvl();
     }
+}
+
+function displayLvl() {
+
+    userLvl.innerHTML = level;
 }
