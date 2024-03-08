@@ -24,3 +24,12 @@ function displayNums() {
         }, 3000 * level);
     }
 }
+
+function checkAnswer() {
+
+    if (userAnswer === answer) {
+        level++
+    } else {
+        level = 1
+    }
+}
